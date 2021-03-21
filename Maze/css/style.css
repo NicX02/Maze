@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+    font-weight: 700;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+body
+{
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background: radial-gradient(circle, rgb(0, 0, 0) 36%, rgb(15, 0, 29) 83%);
+}
+
+h1
+{
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    font-size: 4vw;
+    transform: translate(-50%, -50%);
+    color: #9a33fa;
+
+    width: 25vw;
+    height: 15vw;
+    text-align: center;
+    display: inline;
+    margin:  4vw auto;
+    transition: 0.4s;
+}
+
+p
+{
+    color: #9a33fa;
+}
+
+
+.maze 
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+a
+{
+
+}
+a:hover
+{
+    background: #9a33fa;
+    color: black;
+    box-shadow: 0 0 5px #9a33fa,
+                0 0 25px #9a33fa,
+                0 0 50px #9a33fa,
+                0 0 200px #9a33fa;
+}
+a span
+{
+    position: absolute;
+    display: block;
+}
+a span:nth-child(1)
+{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent, #9a33fa);
+    animation: anim1 2s linear infinite;
+}
+
+@keyframes anim1
+{
+    0%
+    {
+        left: -100%;
+    }
+    50%, 100%
+    {
+        left: 100%;
+    }
+}
+a span:nth-child(2)
+{
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent, #9a33fa);
+    animation: anim2 2s linear infinite;
+    animation-delay: 0.5s;
+}
+
+@keyframes anim2
+{
+    0%
+    {
+        top: -100%;
+    }
+    50%, 100%
+    {
+        top: 100%;
+    }
+}
+
+a span:nth-child(3)
+{
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent, #9a33fa);
+    animation: anim3 2s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes anim3
+{
+    0%
+    {
+        right: -100%;
+    }
+    50%, 100%
+    {
+        right: 100%;
+    }
+}
+
+a span:nth-child(4)
+{
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(0deg,transparent, #9a33fa);
+    animation: anim4 2s linear infinite;
+    animation-delay: 1.50s;
+}
+
+@keyframes anim4
+{
+    0%
+    {
+        top: 100%;
+    }
+    50%, 100%
+    {
+        top: -100%;
+    }
+}
+
+#settings span
+{
+    position: absolute;
+    display: block;
+}
+#settings span:nth-child(1)
+{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent, #9a33fa);
+    animation: anim1 2s linear infinite;
+}
+#settings span:nth-child(2)
+{
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent, #9a33fa);
+    animation: anim2 2s linear infinite;
+    animation-delay: 0.5s;
+}
+#settings span:nth-child(3)
+{
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent, #9a33fa);
+    animation: anim3 2s linear infinite;
+    animation-delay: 0s;
+}
+#settings span:nth-child(4)
+{
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(0deg,transparent, #9a33fa);
+    animation: anim4 2s linear infinite;
+    animation-delay: 0.5s;
+}
+
+
+#settings 
+{
+    position: absolute;
+    padding: 1.5vw;
+    top: 50%;
+    left: 50%;
+    width: 45vw;
+    height: 20vw;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 2vw;
+    transition: 0.4s;
+    z-index: 2;
+}
+
+@keyframes bgAnim1 {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+} 
+  
+input 
+{
+    margin: 1vw;
+    font-size: 1.3vw;
+    background: transparent;
+    color: #9a33fa;
+    text-align: center;
+    border: none;
+    border-bottom: 2px solid #000000;
+    margin-top: 0.2rem;
+    margin-right: 4%;
+    transition: 0.25s;
+}
+  
+#submit 
+{
+    font-size: 2.25vw;
+    background-color: transparent;
+    border: 1px solid #9a33fa;
+    border-radius: 10px;
+    padding: 0.4rem;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#size:hover
+{
+    font-size: 1.5vw;
+    background: #9a33fa;
+    color: black;
+    box-shadow: 0 0 5px #9a33fa,
+                0 0 25px #9a33fa,
+                0 0 50px #9a33fa,
+                0 0 200px #9a33fa;
+}
+  
+#size:focus
+{
+    background: #9a33fa;
+    color: black;
+    box-shadow: 0 0 5px #9a33fa,
+                0 0 25px #9a33fa,
+                0 0 50px #9a33fa,
+                0 0 200px #9a33fa;
+}
+  
+#number:hover
+{
+    font-size: 1.5vw;
+    background: #9a33fa;
+    color: black;
+    box-shadow: 0 0 5px #9a33fa,
+                0 0 25px #9a33fa,
+                0 0 50px #9a33fa,
+                0 0 200px #9a33fa;
+}
+
+
+#number:focus
+{
+    background: #9a33fa;
+    color: black;
+    box-shadow: 0 0 5px #9a33fa,
+                0 0 25px #9a33fa,
+                0 0 50px #9a33fa,
+                0 0 200px #9a33fa;
+}
+
+
+
+#submit:hover 
+{
+    border: 1px solid #000000;
+    background: #9a33fa;
+    color: black;
+    box-shadow: 0 0 5px #9a33fa,
+                0 0 25px #9a33fa,
+                0 0 50px #9a33fa,
+                0 0 200px #9a33fa;
+}
+  
+.complete 
+{
+    position: absolute;
+    padding: 1.5vw;
+    top: 50%;
+    left: 50%;
+    width: 45vw;
+    height: 20vw;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 2vw;
+    transition: 0.4s;
+    z-index: 2;
+    background-color: #000000;
+    color: #9a33fa;
+    display: none;
+}
+
+
+.complete span
+{
+    position: absolute;
+    display: block;
+}
+.complete span:nth-child(1)
+{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent, #9a33fa);
+    animation: anim1 2s linear infinite;
+}
+.complete span:nth-child(2)
+{
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent, #9a33fa);
+    animation: anim2 2s linear infinite;
+    animation-delay: 0.5s;
+}
+.complete span:nth-child(3)
+{
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent, #9a33fa);
+    animation: anim3 2s linear infinite;
+    animation-delay: 0s;
+}
+.complete span:nth-child(4)
+{
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(0deg,transparent, #9a33fa);
+    animation: anim4 2s linear infinite;
+    animation-delay: 0.5s;
+}
+
+
+
+
+
+
+.mc
+{
+    position: relative;
+    top: 20%;
+    color: #9a33fa;
+}
+
+  
+.replay
+{
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    color: #9a33fa;
+}
+
+.close
+{
+    position: absolute;
+    top: 50%;
+    right: 25%;
+    color: #9a33fa;
+}
+
+.RM
+{
+    position: absolute;
+    left: 50%;
+    bottom: 3%;
+    font-size: 2.5vw;
+    transform: translate(-50%, -50%);
+    color: #9a33fa;
+    padding: 1% 1%;
+    text-decoration: none;
+    text-transform: uppercase;
+    align-items: center;
+    text-align: center;
+    display: inline;
+    transition: 0.4s;
+    display: none;
+}
